@@ -1,5 +1,9 @@
 # Tiger Knight Revival（虎豹騎 復活計畫）
 
+> **⏸ 專案已暫停（2026-11）— 歡迎接手。** 原作者目前不再開發，也可能不會回覆 issue。歡迎 fork 繼續研究；從 `notes/START_HERE.md` 開始讀。
+>
+> **⏸ Paused (Nov 2026) — anyone is welcome to pick it up.** The original author is no longer developing it and may not answer issues. Feel free to fork it and continue; start with `notes/START_HERE.md`.
+
 [繁體中文](#繁體中文) | [English](#english)
 
 ---
@@ -18,6 +22,14 @@
 - 這是非官方的愛好者專案，與遊戲的發行商、開發商無任何關係。
 - **本專案不包含任何遊戲檔案或資產。** 你必須自己在 Steam 上擁有《Tiger Knight》（App 415660）並安裝，所有工具都只讀你自己的遊戲副本。
 - 目的僅為保存與互通性研究。遊戲名稱、商標與著作權屬於各自的擁有者。
+
+### 這個專案是怎麼做出來的
+本專案由一位**沒有程式背景的玩家**主導：決定方向，並在真正的遊戲裡逐版測試（戰鬥伺服器前後試了 50 多個版本），回報看到的結果。程式、逆向分析與筆記則是由 AI（Anthropic 的 Claude）協助撰寫。
+
+所以請這樣看待這份專案：
+- 「目前狀態」裡寫的「可以用」，都是實際在遊戲裡測過的。
+- 筆記裡標示 **hypothesis（推測）** 的內容只是靜態分析得到的猜測，尚未驗證，接手時請自行確認。
+- 程式碼以「能動、方便實驗」為優先，不是精心設計的成品，歡迎重構。
 - 授權：MIT（見 `LICENSE`），僅適用於本專案自己撰寫的程式與筆記。
 
 ### 目前狀態（截至 2026-11-08）
@@ -93,6 +105,14 @@ Tiger Knight (Chinese: 虎豹騎) has been shut down. This project provides a **
 - **No game files or assets are included.** You must own Tiger Knight (Steam App 415660) and have it installed; all tools only read your own copy.
 - Provided for preservation and interoperability research. Game names, trademarks and copyrights belong to their respective owners.
 - Licensed under MIT (see `LICENSE`), covering only the code and notes written for this project.
+
+### How this project was made
+The project was led by a **player with no programming background**. They set the direction, tested build after build in the real game (more than 50 battle-server variants), and reported what they saw. The code, the reverse engineering and the notes were written with the help of an AI, Anthropic's Claude.
+
+What this means for you:
+- Everything listed as working under "Status" was tested in the actual game.
+- Claims marked **hypothesis** in the notes come from static analysis and are not verified, so check them yourself.
+- The code favours "works and is easy to experiment with" over clean design. Refactoring is welcome.
 
 ### Status (as of 2026-11-08)
 Works:
