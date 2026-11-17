@@ -1,0 +1,1 @@
+[失敗] 找不到你選的版本檔（server\mods\KingdomGame_A.u / KingdomGame_D_diag.u / KingdomGame_E.u）。請回來跟我說，我會重新產生。

@@ -1,0 +1,16 @@
+# Server-location pullback study (11-07 05:00): lead partly confirmed statically, inspector option B added
+Question: is the hero's ground position pulled to LastValidServerLocation (+0x1D40, = (100,0,0), not hero pos)? Static, Win32 exe (private Ghidra copy tools\ghidra_projects_d); the game runs Win64 so offsets differ - everything here is hypothesis unless marked.
+
+## Findings
+- Script (verified by sc.exe/UELib decode of KingdomGame_plain.u): LastValidServerLocation, TooFarFromServerLocationTime, DragSyncPawnToGround, SmoothLocation appear in NO script function body. DragSyncPawnToGround() and SmoothLocation(DeltaTime,bConsiderZ,bNeedAccel,bCheckGround) are only *declared* (native, KingdomSyncPawn). So only native code reads/writes the two fields (or they are dead). Win32 byte scans for disp 0x1D3C/0x1D40 are meaningless (Win32 layout differs; hits are stack locals).
+- Win32 natives located via exec thunks (DragSync thunk 0xd6ac80 -> vslot +0x65c; SmoothLocation thunk -> +0x654); KingdomPawn vtable 0x14da468 slot 0x65c = 0xe874b0, slot 0x654 = 0xe726c0 (also in subclass vtable 0x15098b0; a KingdomSyncPawn override not found).
+- 0xe874b0 (DragSyncPawnToGround, base impl): throttled (>=3 frames) downward line trace from Location (+0x54..), on hit sets Location z / Velocity / flag |=1. It does NOT use any server location. => not the pin (hypothesis).
+- 0xe726c0 (SmoothLocation, base impl): target vector = *(DAT_01717060 + 0x1c..0x24) (a global object created in the local-hero spawn 0xdf26b0, FUN_00df1e70; probably the hero's sync-side unit, its position). If dist^2 <= threshold: Location += (target - Location) * DeltaTime-factor via MoveActor (0x8667a0); else teleport to target. bConsiderZ keeps pawn z. => STRONG candidate for the pin: while Walking the pawn is pulled toward the sync unit position each tick, which only advances when the sync sim (slave msg 200 / WalkerSlave, frames) moves it; physics velocity is undone each tick. In air (Falling) it is presumably not called => jump/air control OK. This matches every observation (Velocity accepted, Location stuck, ~0.2 u/s creep).
+- LastValidServerLocation (100,0,0) could not be tied to a reader; it may be only a fallback used when TooFarFromServerLocationTime exceeds a limit. Which message sets the sync unit's position: slave msg 200 seek/0xc9/0xca (V36 tried in-frame msg 200 with no reaction) - nothing clear, so NO variant 37.
+
+## Deliverable
+- 英雄速度檢查.bat key **B** = `ue_inspect.py --pin` (needs admin): asks mode (1 = only LastValidServerLocation; 2 = also every StructProperty named *Location*/*Pos* (not Velocity/Accel/Rotation/Scale) in +0x1D00..0x1E00), then Enter + 5 s countdown (user holds W), then 10 s: every ~10 ms write those fields = hero Location and TooFarFromServerLocationTime = 0; prints Location every second and x/y start vs end; log saved via save(). py_compile + --selftest OK (mock hero returns "field not found"). NOT run in game.
+
+## Interpretation of the user's result
+- x/y moves a lot (>>1 unit/s) => LastValid/related field IS the pull target; then find who normally sets it.
+- Still ~0 => these fields are not it; next target is the sync unit pointed at by global DAT_01717060 (Win32) - needs Win64 exe in Ghidra (import ~10+ min) or a memory scan for a vec3 equal to the spawn pos near the sync unit.

@@ -1,0 +1,244 @@
+0 connector.entryHandler.test 0x10065ad3 0x1006d7bc 0x1006dc2b 0x1006e841
+1 connector.entryHandler.heartbeat 0x10081043
+2 connector.entryHandler.auth 0x100634f8
+3 connector.entryHandler.entry 0x10063a98
+4 userstate.chatHandler.FriendTalk 0x10064b95
+5 userstate.chatHandler.rtChatByName 
+6 userstate.friendHandler.makeFriend 0x10064145
+7 userstate.friendHandler.breakFriend 0x10064435
+8 userstate.friendHandler.acceptToMakeFriend 0x10064725
+9 userstate.friendHandler.enumerateFriends 0x10064a5a
+10 userstate.friendHandler.addBlack 0x10064f15
+11 userstate.friendHandler.delBlack 0x10065205
+12 userstate.friendHandler.getBlackList 0x100654ea
+13 userstate.userHandler.newUser 0x10066322
+14 userstate.userHandler.unlockFaceicon 0x100667d3
+15 userstate.userHandler.unlockFaceframe 0x10066a13
+16 userstate.userHandler.equipFaceicon 0x10066c53
+17 userstate.userHandler.equipFaceframe 0x10066e93
+18 userstate.userHandler.useChangeFaceCard 0x10067101
+19 userstate.userHandler.getSelfInfo 0x1006857a
+20 userstate.userHandler.queryRoleInfo 0x100686b5
+21 userstate.userHandler.loadFaceInfo 0x10068c53
+22 userstate.userHandler.getCurLotteryAwardInfo 0x10068e33
+23 userstate.userHandler.loadStoreBuyLimit 0x10069013
+24 userstate.userHandler.checkNickName 0x10069207
+25 statistic.staHandler.findRolesFuzzy 0x100693b7
+26 userstate.userHandler.getAppraise 0x100695a3
+27 userstate.userHandler.getSoldier 0x10069783
+28 userstate.userHandler.operArmyAttr 0x100699c3
+29 userstate.userHandler.buySoldier 0x10069cb3
+30 userstate.userHandler.sellSoldier 0x10069ef3
+31 userstate.userHandler.buyBarracks 0x1006a133
+32 userstate.userHandler.loadTechInfo 0x1006a36a
+33 userstate.userHandler.getRankOpenInfo 0x1006a4a3
+34 userstate.userHandler.queryScienceTypeOpenInfo 0x1006a733
+35 userstate.userHandler.openRank 0x1006a973
+36 userstate.userHandler.buyRankPack 0x1006ac05
+37 userstate.userHandler.openRankPack 0x1006aee5
+38 userstate.userHandler.openScience 0x1006b243
+39 userstate.userHandler.queryPerfectRankInfo 0x1006b4ca
+40 userstate.userHandler.getRoleEquipment 0x1006b5fa
+41 userstate.userHandler.buyRoleEquipment 0x1006b733
+42 userstate.userHandler.getSoldierEquipment 0x1006b9c3
+43 userstate.userHandler.buySoldierEquipment 0x1006bc03
+44 userstate.userHandler.loadRoleSuit 0x1006be8a
+45 userstate.userHandler.exchRoleEquipment 0x1006bfc5
+46 userstate.userHandler.increaseRoleSuit 0x1006c8c3
+47 userstate.userHandler.loadRoleItem 0x1006caa3
+48 userstate.userHandler.loadRoleItemForTgp 0x1006cce3
+49 userstate.userHandler.delRoleItem 
+50 userstate.userHandler.addSupplyRoleItem 
+51 userstate.userHandler.repairRoleItem 
+52 userstate.userHandler.sellRoleItem 
+53 userstate.userHandler.expandBag 
+54 userstate.userHandler.useGiftPackage 
+55 userstate.userHandler.exchPropBar 
+56 userstate.userHandler.useHeroConsumables 
+57 userstate.userHandler.useSoldierConsumables 
+58 userstate.userHandler.setEquipmentCommonUsed 
+59 userstate.userHandler.sortBag 0x1006dd9a
+60 userstate.userHandler.mergeitems 0x1006ded5
+61 userstate.userHandler.loadRoleAssistant 0x1006e43a
+62 userstate.userHandler.recruitRoleAssistant 
+63 userstate.userHandler.dismissRoleAssistant 
+64 userstate.userHandler.buyHeroEquip 0x1006e573
+65 userstate.userHandler.unlockcoatRoleAssistant 
+66 userstate.userHandler.equipcoatRoleAssistant 
+67 userstate.userHandler.forwardRoleAssistant 
+68 userstate.userHandler.employRoleAssistant 
+69 userstate.userHandler.getSignInInfo 0x1006eaf3
+70 userstate.userHandler.signIn 0x1006ecd3
+71 userstate.userHandler.reSignIn 0x1006f143
+72 userstate.userHandler.getSignInReward 0x1006eeb3
+73 userstate.userHandler.getTreeAward 0x1006f383
+74 userstate.userHandler.getOnlineInfo 0x1006f563
+75 userstate.userHandler.getOnlineReward 0x1006f743
+76 userstate.userHandler.reqRolePreBattleInfo 0x10070973
+77 userstate.userHandler.reqStoreInfo 0x10072383
+78 userstate.userHandler.buyStoreItem 0x10072615
+79 userstate.medalHandler.getUserMedalInfo 0x1007f805
+80 userstate.medalHandler.getSelfMedalInfo 0x1007faea
+81 userstate.medalHandler.getUserHonorInfo 0x1007fc25
+82 userstate.medalHandler.getSelfHonorInfo 0x1007ff0a
+83 userstate.medalHandler.reapMedalAward 0x10080043
+84 userstate.medalHandler.reapHonorAward 0x10080283
+85 userstate.userHandler.loadPropBar 0x1006cf1a
+86 userstate.userHandler.setNoviciateStage 0x10080743
+87 userstate.userHandler.setTutorial 0x10080bc3
+88 userstate.userHandler.setAddictProfit 0x10080e03
+89 userstate.userHandler.useUnlockSuitCard 
+90 userstate.userHandler.useAddBarrackCard 
+91 userstate.userHandler.useAddStoreCard 
+92 userstate.userHandler.useVipCard 
+93 userstate.userHandler.useChangeNameCard 0x10068a5e
+94 userstate.userHandler.drawBattleLottery 0x10081815
+95 userstate.userHandler.exchangeCopper 0x10081af3
+96 userstate.userHandler.exchangeGeneralExp 0x10081d55
+97 userstate.userHandler.getJadeAward 0x10082073
+98 userstate.userHandler.openJadeAward 0x100822b3
+99 userstate.userHandler.exchangeJadeAward 0x100824f3
+100 userstate.userHandler.getFinalAward 0x10082733
+101 userstate.userHandler.gainFinalAward 0x10082973
+102 userstate.emailHandler.loadRoleEmail 0x1006f983
+103 userstate.emailHandler.deleteEmail 0x1006fbc3
+104 userstate.emailHandler.refreshEmail 0x1006fe4a
+105 userstate.emailHandler.sendEmail 0x1006ff85
+106 userstate.emailHandler.operateEmail 0x10070333
+107 userstate.userHandler.rolePmCmd 0x100705c3
+108 userstate.userHandler.getRoleState 0x1007083a
+109 userstate.matchHandler.restore 0x10065d53
+110 userstate.matchHandler.restore 0x10065f83
+111 userstate.matchHandler.clientStartGameFail 0x100661aa
+112 userstate.matchHandler.joinMatch 0x10070cb5
+113 userstate.matchHandler.leaveMatch 0x1007144a
+114 userstate.matchHandler.acceptEnterMatch 0x1007157a
+115 userstate.matchHandler.refuseEnterMatch 0x100716aa
+116 userstate.matchHandler.reqMatchMemberNum 
+117 userstate.matchHandler.queryMatchModeTime 0x100717ea
+118 userstate.matchHandler.prepareMatchRoom 0x10071923
+119 userstate.matchHandler.chgMatchRoomBattleInfo 0x10071ca3
+120 userstate.matchHandler.queryCrusadeMatchPunish 0x10071fca
+121 userstate.matchHandler.matchRoomtalk 0x10072103
+122 userstate.chatHandler.channelChat 0x10067543
+123 userstate.chatHandler.changeChannel 0x100677c3
+124 userstate.chatHandler.getChannelInfo 0x100679fa
+125 userstate.chatHandler.privateChat 0x10065755
+126 userstate.chatHandler.privateChannelChat 0x10067b43
+127 userstate.chatHandler.leavePrivateChannel 0x10067e63
+128 connector.entryHandler.queryServerTime 0x1006561a
+129 userstate.customRoomHandler.queryCustomRoom 0x1007abc3
+130 userstate.customRoomHandler.createCustomRoom 0x1007ae05
+131 userstate.customRoomHandler.enterCustomRoom 0x1007b503
+132 userstate.customRoomHandler.leave 0x1007b86a
+133 userstate.customRoomHandler.startGame 0x1007b99a
+134 userstate.customRoomHandler.playerAction 0x1007cb73
+135 userstate.customRoomHandler.findCustomRoom 0x1007d083
+136 userstate.customRoomHandler.hostSetMode 0x1007bad3
+137 userstate.customRoomHandler.hostAction 0x1007be07
+138 userstate.customRoomHandler.hostActionStr 0x1007c0a3
+139 userstate.customRoomHandler.hostActions 0x1007c375
+140 userstate.customRoomHandler.ready 0x1007c883
+141 userstate.customRoomHandler.talk 0x1007ce03
+142 userstate.customRoomHandler.inviteJoin 0x1007d2c5
+143 userstate.customRoomHandler.acceptJoin 0x1007d5b3
+144 userstate.customRoomHandler.refuseJoin 0x1007d87a
+145 userstate.teamHandler.createTeam 0x100735d5
+146 userstate.teamHandler.inviteJoinTeam 0x10072bb5
+147 userstate.teamHandler.acceptJoinTeam 0x10072ea3
+148 userstate.teamHandler.refuseJoinTeam 0x10073125
+149 userstate.teamHandler.leaveTeam 0x1007349a
+150 userstate.teamHandler.kickUserTeam 0x10073ff5
+151 userstate.teamHandler.teamTalk 0x10074783
+152 userstate.teamHandler.setTeamReady 0x10074c43
+153 userstate.teamHandler.loadTeamMap 0x10074a03
+154 userstate.teamHandler.beginTeamMatch 0x100742e3
+155 userstate.teamHandler.cancelTeamMatch 0x1007451a
+156 userstate.teamHandler.disbandMatch 0x1007464a
+157 userstate.teamHandler.teamChangeMode 0x10074e85
+158 statistic.staHandler.getStatisticsInfo 0x10079c93
+159 statistic.staHandler.getStatisticsInfoEx 0x10079ed5
+160 statistic.staHandler.getMonthRankList 0x1007a633
+161 statistic.staHandler.tellDelay 0x1007a923
+162 userstate.userHandler.getRacingInfo 0x1007a213
+163 userstate.userHandler.getRacingRankList 0x1007a3f3
+164 userstate.syndicateHandler.querySynList 0x100758a3
+165 userstate.syndicateHandler.getSynInfo 0x10075b2a
+166 userstate.syndicateHandler.getSynMemberInfo 0x10075eda
+167 userstate.syndicateHandler.getApplySynList 0x1007600a
+168 userstate.syndicateHandler.getSynApplyMemberInfo 0x1007613a
+169 userstate.syndicateHandler.getSynNewsInfo 0x1007626a
+170 userstate.syndicateHandler.getSynAuthPosiInfo 0x1007639a
+171 userstate.syndicateHandler.createSyn 0x100764d5
+172 userstate.syndicateHandler.expSynCapacity 0x10076d1a
+173 userstate.syndicateHandler.applyJoin 0x10076e55
+174 userstate.syndicateHandler.inviteUserJoin 0x10077143
+175 userstate.syndicateHandler.acceptInviteJoin 0x100773c3
+176 userstate.syndicateHandler.removeApplySyn 0x100776e5
+177 userstate.syndicateHandler.acceptJoin 0x100779d5
+178 userstate.syndicateHandler.refuseJoin 0x10077cc5
+179 userstate.syndicateHandler.expel 0x10077fb5
+180 userstate.syndicateHandler.leave 0x1007829a
+181 userstate.syndicateHandler.commission 0x100783d5
+182 userstate.syndicateHandler.cede 0x10078715
+183 userstate.syndicateHandler.dismiss 0x100789fa
+184 userstate.syndicateHandler.modifyAim 0x10078b33
+185 userstate.syndicateHandler.modifyFlag 0x10078db3
+186 userstate.syndicateHandler.getInc 0x100790ea
+187 userstate.syndicateHandler.addCont 0x10079223
+188 userstate.syndicateHandler.modifySynAuthPosi 0x10079463
+189 userstate.syndicateHandler.modifySynJoinCheck 0x100797d3
+190 userstate.syndicateHandler.synTalk 0x10079a13
+191 userstate.syndicateHandler.getSynListByName 0x10075c63
+192 userstate.userHandler.loadRoleTask 0x1007e92a
+193 userstate.userHandler.refreshDailyTask 0x1007ea63
+194 userstate.userHandler.refreshDailyTaskAfterDay 0x1007ec9a
+195 userstate.userHandler.handtask 0x1007edd3
+196 userstate.userHandler.getManualReward 0x1007f013
+197 userstate.userHandler.refreshSpecialTask 0x1007f253
+198 userstate.matchHandler.reqChallengeBaseInfo 0x100816da
+199 userstate.userHandler.activegift 0x100804c3
+200 userstate.userHandler.buyVip 0x1007f493
+201 userstate.userHandler.queryVipBuySort 0x1007f6ca
+202 userstate.payHandler.initTxn 0x10082b53
+203 userstate.payHandler.finalizeTxn 0x10082f63
+204 userstate.payHandler.cancelTxn 0x10083293
+205 userstate.userHandler.appraise 0x100835c5
+206 userstate.chargeHandler.getList 0x10083a43
+207 userstate.chargeHandler.obtainAward 0x10083c23
+208 userstate.userHandler.getBattleProfitMultiInfo 0x10083eb3
+209 userstate.payHandler.getDlc 0x10084093
+210 userstate.payHandler.useDlc 0x10084273
+211 userstate.userHandler.commitQuestion 0x100865a3
+212 userstate.payHandler.tgpCreateOrder 0x100849c3
+213 userstate.payHandler.tgpFinishOrder 0x10084d93
+214 userstate.payHandler.tgpGetDlc 0x100844b3
+215 userstate.payHandler.tgpUseDlc 0x10084693
+216 userstate.assetsHandler.addAssets 0x100850da
+217 userstate.assetsHandler.consumeAsset 0x100856a8
+218 userstate.assetsHandler.queryAllAssets 0x100859a5
+219 userstate.assetsHandler.getProductClassInfo 0x10085e95
+220 userstate.assetsHandler.exchangeAssets 0x10086363
+221 userstate.userHandler.joinChatChannel 0x100680da
+222 userstate.userHandler.getChatConnectorsInfo 0x1006820a
+223 userstate.userHandler.chgChatConnector 0x10068343
+224 userstate.matchHandler.createPveBattle 0x1007d9b3
+225 userstate.matchHandler.pveRoomInvite 0x1007dc45
+226 userstate.matchHandler.acceptPveRoomInvite 0x1007df35
+227 userstate.matchHandler.refusePveRoomInvite 0x1007e225
+228 userstate.matchHandler.startPveBattle 0x1007e50a
+229 userstate.matchHandler.kickUserPveRoom 0x1007e645
+230 userstate.userHandler.getTel 0x10086913
+231 userstate.userHandler.bindTelCode 0x10086af3
+232 userstate.userHandler.bindTel 0x10086d73
+233 userstate.userHandler.unbindTelCode 0x10086fb3
+234 userstate.userHandler.unbindTel 0x10087193
+235 userstate.userHandler.rebindTel1Code 0x100873d3
+236 userstate.userHandler.rebindTel1 0x100875b3
+237 userstate.userHandler.rebindTel2Code 0x100877f3
+238 userstate.userHandler.rebindTel2 0x10087a73
+239 userstate.userHandler.modeorder_get 0x10087cb3
+240 userstate.userHandler.liveness_get 0x10087e93
+241 userstate.userHandler.liveness_obtain 0x10088073
+242 userstate.userHandler.setHelpPanel 0x10080983
+243 userstate.userHandler.queryRoleAuthName 0x100812d4

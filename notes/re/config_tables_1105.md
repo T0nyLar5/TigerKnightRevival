@@ -1,0 +1,17 @@
+# Config tables cracked (2026-11-05)
+> rev 1 | 2026-11-08 01:40 | baseline stamp after notes reorg (2186f53)
+Summary: config.cfg, config_client.cfg and terrain.cfg were decrypted with tools/cfgdec.py on 2026-11-05; this section lists what was cracked.
+Conf: see the H/M/L legend in [battle/README.md](../battle/README.md).
+Source: notes/research_free_1105.md section 1 (text moved unchanged, split 2026-11-06).
+
+## 1. config.cfg / config_client.cfg / terrain.cfg are CRACKED [H, verified by decrypting all three]
+- Loader: Sync.dll `0x100b9060` -> class `EyptFiles` (`0x100b95f0`): `fread` whole file, then `CEncrypt<32,253,7,31,122,207,229,63>` (`0x100b9f20` key init, `0x100b9fa0` xor).
+  It is the SAME keystream as the SyncClient TCP stream cipher: `ks[n] = A[n%256] ^ B[(n//256)%256]`, counter starts at 0 for the whole file. (tkcrypt.py / uecfg.py are different ciphers.)
+- Container (after xor): repeated `<windows path> <size>\r\n` + `<size bytes>` + `\r\n`. Text tables are UTF-8 with BOM, tab separated: row 1 = column names, row 2 = types (`[int;key]`, `[str]`, `{armor.txt:Id}` = foreign key), row 3 = Chinese comments, data from row 4.
+- Tool: `tools/cfgdec.py` (functions `xor`, `unpack`). Output (committed): `notes/decrypted/cfg/frontend_config/` (86 files, `frontend\bin\config.cfg`: armytype, hero_type, fujiang, itemtype, science, rank_tree, fr_customroom_map ...), `sync_config/` (123 files, `Binaries\Win32\config.cfg`: **soldiers, fujiang, agentparam, mapindex, aiplayer, aiskill1-43, boss, horse, armor, meleeweapon, rangedweapon, formation, pve_monster, scene_default ...**), `sync_config_client/` (50 files: language_*.txt names, aiplayeraction, fashion ...).
+- `terrain.cfg` (195 MB) is NOT a table: it holds 46 navmesh files `terrain\<Map>_Nav.terrain` (magic `VAND`, header = version 7, bmin/bmax floats, ...). Not extracted to the repo (127 MB for SC_DaDiXing). The notes' "agentType map in terrain.cfg" was wrong: **agentType = `agentparam.txt` `type`** (0 player, 1 soldier, 2 horse, 4 commander/boss, 5 lieutenant, 6 siege ram, 7 ballista, 8 ladder, 9 catapult, 10 gate, 11 PVE monster, 12 barrel, 14 obstacle, 15 rolling log, 16 arrow tower, 19 supply, 20 shield, 21 formation, 22 fortress, 23 jar, 26 supply cart, 27 air vehicle, 28 obstacle, 29 beast). Note: no 3.
+- `mapindex.txt` (id -> map file): 1 SyncTest, 2 WalkTest, 3 TA_Bowangpo_hdr, 4 ChiBi, 5 weinan, 6 GuanDu, 7 XueDiPK_001, 8 FanChen, 9 XueDiPK_002, 10 JieQiao, **11 TA_XinShouJiaoXue_133_MH (长社之战, tutorial)**, 12 TA_TaoFaZhanTutorial_001, 13 PVP_GJ_Dingjunshan, 14 PK_CL_Yanwuchang, 15 PK_CL_Shancun, 16 PVE_DZZL_CHECK_Night, **17 PK_CL_Yanwuchang_005 (骑射演练场)**, 18 PVE_SSZ_DongZhuoZhiLuan_P1, 19 PK_YangRenZhiZhan, 20 PK_DiDao, 21 PK_Yanwuchang_00 (建业校场), ... 47. Map 17 has no Camp1Pos/Dir etc. (all empty), so spawn points come from the UE3 level or from the server data.
+- Id scheme (soldiers.txt row 2 comment): `nation(1魏 2蜀 3吴 4西凉 8other 9newbie) | type(0 lieutenant 1 soldier 2 general) | kind(0 archer 1 cavalry 2 foot 3 horse archer) | number | level`. `SoldierKind` column: 1 foot, 2 archer, 3 cavalry, 4 horse archer (= UE3 spawn switch [0x33] 1..4). armytype.txt ids == soldiers.txt ids (`112011 屯驻矛兵`: head 17000011, shoulder 17100001, upper body 17200001, lower body 17300001, weapons 18051001/18052001, no horse, fHealth 130).
+- Other keys: `hero_type.txt` ids 101001.. (韩浩, 王双 ...), `fujiang.txt` (lieutenants), `aiplayer.txt` (AI rows by id 1..; col SoldierKind), `agentparam.txt`.
+
+

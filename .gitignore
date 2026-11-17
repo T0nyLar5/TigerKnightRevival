@@ -1,0 +1,25 @@
+# local environments / third-party tools (download yourself)
+tools/.venv/
+tools/jdk*/
+tools/ghidra_12.2_PUBLIC/
+tools/ghidra_home/
+tools/ghidra_projects*/
+tools/ue-explorer/
+tools/bin/
+__pycache__/
+*.pyc
+
+# generated / extracted from your own game copy (copyrighted, never commit)
+tools/work/
+tools/uecfg_key.bin
+notes/decrypted/
+notes/scripts/
+server/mods/
+backup/
+
+# personal data and runtime output
+server/logs/
+server/certs/
+server/data/
+*.dmp
+.env

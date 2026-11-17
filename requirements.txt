@@ -1,0 +1,4 @@
+# Only the reverse-engineering tools in tools/ need these; the fake servers use the standard library only.
+pefile
+capstone
+numpy

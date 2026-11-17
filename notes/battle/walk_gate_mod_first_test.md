@@ -1,0 +1,11 @@
+# Walk gate: first script mod test (failed) and fix
+> rev 1 | 2026-11-08 01:40 | baseline stamp after notes reorg (2186f53)
+Part of [walk_gate_v27_mod.md](walk_gate_v27_mod.md) (table of contents).
+
+### Script mod: first test FAILED, cause + fix (11-05 night)
+- Test of the 117-byte EX_False/EX_Nothing patch (file +38545 bytes, chunk 3 re-encoded by upenc): lobby show-character UE process (`XuanRenTEST_Grass?game=kingdomgame.kingdomCharactorGame`, started by frontend "CreateShowCharactorProcess") never reached On_U3SceneReady (frontend log 23:12/23:14), battle said resources loading. Original file restored => OK. So the Kingdom exe does load KingdomGame.u in the lobby too.
+- No integrity check exists: no *TOC*/Hashes.sha in the game dir; exe has only the stock UE3 FAsyncSHAVerify strings (needs Hashes.sha, absent); "KingdomGame.u" is referenced by no exe/xml. Chunk table + sizes are not cross-checked elsewhere found.
+- Best hypothesis: UStruct::Serialize script-size check. PlayerInput export: ScriptBytecodeSize (in memory) = 2793 but ScriptStorageSize (disk) = 1873; the difference is object pointers (4 bytes on disk, 8 in memory) and jump targets (e.g. 0xA1B) are IN-MEMORY offsets. Replacing the condition (about 14 pointers) with 1-byte tokens shrinks the in-memory size by ~56 bytes -> serialization mismatch / wrong jump targets. Fix: keep the token structure, change ONE byte: `JumpIfNot(07)` -> `Jump(06)` (condition becomes dead code, body always skipped).
+- upenc now splices in place: if every differing plain byte is a literal byte of the original LZO stream (tools/lzotok.py tokenizer), only that byte is changed: file size and all chunk sizes identical to the original (1 byte differs on disk).
+- Candidates in server\mods\ (picked by `套用走路修改.bat`, or `套用走路修改.bat A|D|E`): A = 1-byte patch, size identical (test first); D_diag = unpatched content, chunk 3 re-encoded by our LZO (size +38545; if D breaks the game the encoder/size is the culprit, else the bytecode); E = patch + our re-encoding. `walk_move_gate_old` = the broken version, kept in upatch.py for reference.
+- Build: `upatch.py build --out server/mods/KingdomGame_A.u` (default, in place); `--inplace 0` (force re-encode); `--only none --inplace 0 --force-chunks 3` (diag D).

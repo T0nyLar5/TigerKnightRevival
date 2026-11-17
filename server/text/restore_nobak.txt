@@ -1,0 +1,2 @@
+[停止] 找不到備份（server\mods\backup\KingdomGame.u）。可能還沒有套用過修改。
+  如果遊戲檔案有問題，請在 Steam 按「驗證遊戲檔案完整性」。

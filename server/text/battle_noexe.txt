@@ -1,0 +1,2 @@
+找不到戰鬥程式 Kingdom-Win64-Shipping.exe 或 Kingdom-Win32-Shipping.exe。
+請確認遊戲安裝位置。

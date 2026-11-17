@@ -1,0 +1,2 @@
+[停止] 備份檔案（server\mods\backup\KingdomGame.u）大小不對，不像原版。
+  為了安全，什麼都沒有改。請回來跟我說。

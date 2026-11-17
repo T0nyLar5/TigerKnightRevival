@@ -1,0 +1,1 @@
+請把上面的文字（整段）複製或截圖給我。結果也存在 server\logs\pawn_probe_last.txt
