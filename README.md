@@ -24,7 +24,7 @@
 - 目的僅為保存與互通性研究。遊戲名稱、商標與著作權屬於各自的擁有者。
 
 ### 這個專案是怎麼做出來的
-本專案由一位**沒有程式背景的玩家**主導：決定方向，並在真正的遊戲裡逐版測試（戰鬥伺服器前後試了 50 多個版本），回報看到的結果。程式、逆向分析與筆記則是由 AI（Anthropic 的 Claude）協助撰寫。
+本專案由一位**沒有程式背景的玩家**主導：決定方向，並在真正的遊戲裡逐版測試（戰鬥伺服器前後試了 50 多個版本），回報看到的結果。程式、逆向分析與筆記則是由 AI（Anthropic 的 Claude，透過 Claude Code）協助撰寫。
 
 所以請這樣看待這份專案：
 - 「目前狀態」裡寫的「可以用」，都是實際在遊戲裡測過的。
@@ -107,7 +107,7 @@ Tiger Knight (Chinese: 虎豹騎) has been shut down. This project provides a **
 - Licensed under MIT (see `LICENSE`), covering only the code and notes written for this project.
 
 ### How this project was made
-The project was led by a **player with no programming background**. They set the direction, tested build after build in the real game (more than 50 battle-server variants), and reported what they saw. The code, the reverse engineering and the notes were written with the help of an AI, Anthropic's Claude.
+The project was led by a **player with no programming background**. They set the direction, tested build after build in the real game (more than 50 battle-server variants), and reported what they saw. The code, the reverse engineering and the notes were written with the help of an AI, Anthropic's Claude (via Claude Code).
 
 What this means for you:
 - Everything listed as working under "Status" was tested in the actual game.
